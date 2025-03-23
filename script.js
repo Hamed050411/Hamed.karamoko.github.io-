@@ -23,13 +23,12 @@ window.addEventListener("scroll", function (){
     })
     //Animation projet
     let projet = document.querySelectorAll(".projets .box");
-    let projet_block = document.querySelctorAll(".block-projet");
-    projet_block.forEach(projets_block => {
-        let position_liste = projets_block.getBoundingClientRect().top;
+    projet.forEach(projet_block => {
+        let position_liste = projet_block.getBoundingClientRect().top;
         let hauterFenetre_liste = window.innerHeight;
 
         if(position_liste < hauterFenetre_liste && position_liste > 0 ){
             projet.style.transform = "translateY(0px)";
-            projets_block.sTyler.transform = "translateY(0px)";     }
+            }
     })
 })
