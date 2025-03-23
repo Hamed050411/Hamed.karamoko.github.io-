@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaine de catactère</title>
+    <style>
+        body{
+            background: gainsboro;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .retour{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        .retour a{
+            text-decoration: none;
+        }
+        .container-string{
+            text-align: center;
+            background: white;
+            padding: 20px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px black;
+        }
+        #string{
+            width: 90%;
+            padding: 5px;
+            margin: 10px auto;
+        }
+        .btn{
+            color: white;
+            background: blue;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            margin: 5px 0;
+        }
+        .btn.btnS{
+            color: white;
+            background: green;
+        }
+        .message{
+            background: blue;
+            color: white;
+            padding: 5px;
+        }
+        .message1{
+            background: green;
+            color: white;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="retour">
+        <a href="../index.html" class="btn">Retour à l'accueil <i></i></a>
+    </div>
+    <div class="container-string">
+        <h1>Manipulation de chaine de catactère</h1>
+        <input type="text" id="string" placeholder="Saisir une chaine de caractère">
+        <input type="button" title="Longueurde la chaine de caractère saisir" value="Longueur" class="btn" onclick="afficheLongueur()">
+        <input type="button" title="Sous chainede caractère saisir" value="Sous chaine" class="btn btnS" onclick="afficheSousChaine()">
+        <p id="message"></p>
+        <p id="message1"></p>
+    </div>
+
+    </div>
+    <script>
+        function afficheLongueur(){
+            let string = document.getElementById("string").value;
+            let message = document.getElementById("message");
+            let length = string.length;
+            message.innerHTML = "La longueur de cette chaine de caractère est : "+ length;
+            message.className = "message";
+            if (string === "") {
+                message.innerHTML = "Le champ est vide !";
+                message.style.background= "red";
+                message.style.color= "white";
+            }
+        }
+        function afficheSousChaine(){
+            let string = document.getElementById("string").value;
+            let message1 = document.getElementById("message1");
+            let extraire = string.substring(0,3);
+            
+            message1.innerHTML = "Les trois prémières lettre de cette chaine sont : "+ extraire;
+            message1.className = "message1";
+            if (string === "") {
+                message1.innerHTML = "Le champ est vide !";
+                message1.style.background= "red";
+                message1.style.color= "white";
+            }
+        }
+    </script>
+</body>
+</html>

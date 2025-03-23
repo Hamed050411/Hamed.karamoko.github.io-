@@ -1,0 +1,560 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+    color: #00b341;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.card-img{
+    height: 100%;
+    width: 100%;
+}
+.container{
+    width: 99%;
+    height: 100%;
+}
+.img-responsive{
+   height: 100%;
+   width: 100%; 
+}
+.btn{
+    border-radius: 5px;
+    border: none;
+    font-weight: bolder;
+    padding: 10px 40px;
+    margin: 10px;
+    cursor: pointer;
+}
+.btn-primaire{
+    background: #00587d;    
+    color: white;
+}
+.btn-secondaire{
+    background: #00b341;    
+    color: white;
+}
+body{
+    color: #00587d;
+    background: #e4e2e2;
+    width: 100%;
+    height: 100vh;   
+}
+span{
+    color: #00b341;
+    font-weight: bolder;
+}
+
+            /*--------Header--------*/
+
+header{
+    background: white;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 5px solid #00b341 ;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .menu{
+    display: none;
+}
+nav ul {
+    display: flex;
+    line-height: 70px;
+    list-style-type: none;
+
+}
+nav  ul li{
+    display: block;
+    margin: 5px 20px;
+    padding: 3px;
+}
+nav ul li a:hover{ 
+    color: #00587d;
+}
+nav .nom{
+    color: #00587d;
+    line-height:70px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+            /*-------Accueil----------*/
+#accueil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+    background: white;
+    overflow: hidden;
+}
+.accueil{
+    height: 100%;
+}
+.accueil .block{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+.accueil .texte p{
+    margin:20px auto;
+    width: 95%;
+    font-size: 40px;
+}
+.accueil .texte{
+    text-align: center;
+    width: 600px;
+    height: 30%;
+    padding: 20px;
+    transform: translateX(-1000px);
+}
+.accueil .photo{
+    border: 10px solid #00587d;
+    width: 500px;
+    height: 60%;
+    background: #e65d5d;
+    transform: translateX(1000px);
+}
+
+            /*-------Apropos----------*/
+#apropos{
+    width: 100%;
+    padding: 150px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    overflow: hidden;
+}
+.apropos{
+    height: 100%;
+}
+.apropos h2{
+    text-align: center;
+    font-weight: bolder;
+    color: #00b341;
+    
+}
+.apropos .block{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    height: auto;
+}
+.apropos .texte p{
+    margin: 20px 0;
+    width: 80%; 
+    font-size: 24px; 
+}
+.apropos .texte{
+    width: 700px;
+    height: auto;
+    padding: 10px 20px;
+    margin: 0;
+    margin-top:70px;
+
+}
+.apropos .texte .presentation-1{
+    transform: translateX(-1000px);
+    transition: all 0.80s ease-in-out;
+}
+.apropos .texte .presentation-2{
+    transform: translateX(-1050px);
+    transition: all 1.20s ease-in-out;
+}
+.apropos .texte .presentation-3{
+    transform: translateX(-1100px);
+    transition: all 1.60s ease-in-out;
+}
+.apropos .texte .presentation-btn{
+    transform: translateX(-1150px);
+    transition: all 2s ease-in-out;
+}
+.apropos .photo{
+    background-color: yellow;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid #00587d;
+    width: 370px;
+    height: 370px;
+    background: #e65d5d;
+    margin-top:70px;
+}
+.apropos .photo:hover{
+    transform: rotateY(180deg);
+    transition: all 2s ease;
+}
+
+            /*--------Mes projets-----------*/
+#projets{
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    overflow: hidden;
+}
+.projets {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding-bottom: 100px;
+}
+.projets .bloc{
+    width: 100%;
+    height: 100%;
+}
+.projets h2{
+    padding: 50px;
+    color: #00587d;
+}
+.projets .block{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+.projets .box{
+    width: 350px;
+    height: 220px;
+    margin: 10px 0;
+    background: #e4e2e2;
+    padding: 10px;
+    border-radius: 10px;
+}
+.projets .boxProjet1{
+    transform: translateY(500px);
+    transition: all 0.80s ease-in-out;
+}
+.projets .boxProjet2{
+    transform: translateY(510px);
+    transition: all 1s ease-in-out;
+}
+.projets .boxProjet3{
+    transform: translateY(520px);
+    transition: all 1.20s ease-in-out;
+}
+.projets .boxProjet4{
+    transform: translateY(500px);
+    transition: all 0.80s ease-in-out;
+}
+.projets .boxProjet5{
+    transform: translateY(510px);
+    transition: all 1s ease-in-out;
+}
+.projets .boxProjet6{
+    transform: translateY(520px);
+    transition: all 1.20s ease-in-out;
+}
+.projets .box:hover{
+    position: relative;
+    top: 10px;
+    background: #c9f8de;
+    cursor: pointer;
+}
+.projets .box p{
+    padding: 10px;
+    height: 110px;
+    font-size: 18px;
+}
+.projets .box h5{
+    padding: 10px;
+    margin:5px 0;
+}
+
+
+            /*--------Mes competences-----------*/
+#competences{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+}
+.competences{
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.competences .bloc{
+    width: 100%;
+    height: 100%;
+}
+.competences h2{
+    padding: 50px;
+    color: #00b341;
+}
+.competences .block{
+    height: 85%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.competences .box{
+    width: 700px;
+    height: 350px;
+    margin: 10px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.competences .box:hover{
+    margin: 10px;
+    background: #c7edfd;
+    transform: scale(0.9);
+    
+
+}
+.competences .box .tableau{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+}
+.competences .box h3{
+    padding: 10px;
+    font-weight: bolder;
+}
+table{
+    margin: auto;
+    width: 100%;
+}
+table .tr-progression {
+    
+    height: 55px;
+}
+table tr .pourcentage {
+    width: 75px;
+    color: white;
+    padding-left: 20px;
+}
+table tr .pourcentage strong {
+    background: #00587d;
+    width: 50px;
+    border-radius: 50%;
+    padding: 10px;
+    display: none;
+}
+table .tr-progression:hover strong {  
+    display: block;
+}
+.competences .box p{
+    margin:10px 0;
+    text-align: start;
+    font-weight: bolder;
+}
+.competences .box .progression{
+    width: 100%;
+    height: 5px;
+    background: gray;
+}
+.competences .box .niveau-gp{
+    height: 100%;
+    width: 85%;
+    background: #00587d;
+}
+.competences .box .niveau-rp{
+    height: 100%;
+    width: 75%;
+    background: #00587d;
+}
+.competences .box .niveau-a{
+    height: 100%;
+    width: 90%;
+    background: #00587d;
+}
+.competences .box .niveau-html{
+    height: 100%;
+    width: 95%;
+    background: #00587d;
+}
+.competences .box .niveau-css{
+    height: 100%;
+    width: 75%;
+    background: #00587d;
+}
+.competences .box .niveau-js{
+    height: 100%;
+    width: 60%;
+    background: #00587d;
+}
+.competences .box .niveau-vs{
+    height: 100%;
+    width: 95%;
+    background: #00587d;
+}
+
+            /*-------Contacts--------*/
+
+#contacts{
+    width: 100%;
+    display: block;
+    background: #63fa9b;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+.contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+#contacts span{
+    color: #00587d;
+}
+.contacts .block{
+    margin-top: 0;
+    width: 60%;
+    height: auto;
+}
+#contacts .texte{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+.contacts form{
+    text-align: start;
+    width: 100%;
+    height: auto;
+}
+.contacts form .bloc {
+    width: 100%;
+    margin: 20px 0;
+}
+.contacts form .block-1{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+.contacts form .block-1 .box{
+    width: 400px;
+    height: auto;
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+    margin-top: 5px;
+}
+.contacts form .block-1 input{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+    margin-top: 5px;
+}
+.contacts form label {
+    color: white;
+}
+.contacts form .block-2 input{  
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    padding: 2px;
+    margin-top: 5px;
+}
+.contacts form .block-3 textarea{
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+}
+.contacts form .block-4{
+    width: 100%;
+    text-align: center;
+}
+
+            /*---------Footer-------*/
+footer{
+    height: 70px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+footer .footer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+footer div{
+    width: 500px;
+    padding: 5px;
+    margin: 2px;
+}
+@media screen and (max-width: 968px) {
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav .menu{
+        display: block;
+        font-size: 4vw;
+        cursor: pointer;
+    }
+    nav #my-popover {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        line-height: 70px;
+        border: none;
+        background: rgba(252, 251, 251, 0.8);
+    }
+    nav #my-popover ul {
+        display: block;
+        width: 300px;
+        padding-left: 20px;
+    }
+    nav .nav-list{
+        display: none;
+    }
+    button{
+        padding: 10PX;
+        border: none;
+        background: none;
+        color: #00b341;
+        font-weight: bolder;
+    }
+    nav ul li button:hover{ 
+        color: #00587d;
+        cursor: pointer;
+    }
+    .accueil .texte p{
+        margin:20px auto;
+        width: 95%;
+        font-size: 25px;
+    }
+}

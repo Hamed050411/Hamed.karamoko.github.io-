@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur</title>
+    <style>
+        body{
+            background: gainsboro;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .retour{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        .retour a{
+            text-decoration: none;
+        }
+        .container-string{
+            text-align: center;
+            background: white;
+            padding: 20px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px black;
+        }
+        #montant, #interet, #duree{
+            width: 80%;
+            padding: 5px;
+            margin: 10px auto;
+        }
+
+        .btn{
+            color: white;
+            background: blue;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            margin: 5px 0;
+        }
+        .message{
+            background: black;
+            color: white;
+            padding: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="retour">
+        <a href="../index.html" class="btn">Retour à l'accueil <i></i></a>
+    </div>
+    <div class="container-string">
+        <h1>Calculateur de pret</h1>
+        <table>
+            <tr><td><input type="number" id="montant" placeholder="Saisir le montant emprunter"></td><td><span> Fcfa</span></td></tr>
+            <tr><td><input type="number" id="interet" placeholder="Saisir le taux d'interet annuel'"></td><td><span> %</span></td></tr>
+            <tr><td><input type="number" size="4" maxlength="4" id="duree" placeholder="Saisir la durée"></td><td><span> An(s)</span></td></tr>
+        </table>
+        <input type="button" value="Valider" class="btn" onclick="afficheMontant()">
+        <p id="message"></p>
+    </div>
+
+    </div>
+    <script>
+        function afficheMontant(){
+            let montant = document.getElementById("montant").value;
+            let interetAnnuel = document.getElementById("interet").value;
+            let duree = document.getElementById("duree").value;
+            let message = document.getElementById("message");
+            let interetMensuel = (interetAnnuel/100)/12;
+            let nombrMois = duree*12
+            if (montant === "" || interet === "" || duree === "") {
+                message.innerHTML = "Velliez remplir tous les champs !"; 
+                message.style.background= "red";
+                message.style.color= "white"; 
+                message.className = "message";
+           }
+            else if (montant <= 0){
+                message.innerHTML = "Entrez un montant positif et superieur à 0 !";
+                message.style.background= "red";
+                message.style.color= "white";
+                message.className = "message";
+            } 
+            else if (interetAnnuel <= 0) {
+                message.innerHTML = "Entrez un interet positif et superieur à 0 !";
+                message.style.background= "red";
+                message.style.color= "white";
+                message.className = "message";
+            } 
+            else if (duree <= 0) {
+                message.innerHTML = "Entrez une durée superieur à 0 !";
+                message.style.background= "red";
+                message.style.color= "white";
+                message.className = "message";
+            }
+            //let paiementM0 = montant * (interetMensuel * (1 + interet)**paiementT)) / ((1 + interetMensuel)* Maht.pow(paiementT - 1);
+            let paiementMensuel = montant * (interetMensuel * (1 + interetMensuel)**nombrMois) / (((1 + interetMensuel)**nombrMois) - 1);
+            message.innerHTML = "Le paiement mensuel est : "+ paiementMensuel.toFixed(2);
+            message.className = "message";
+        }
+    </script>
+</body>
+</html>

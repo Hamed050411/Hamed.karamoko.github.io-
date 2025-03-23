@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombres</title>
+    <style>
+        body{
+            background: gainsboro;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .retour{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        .retour a{
+            text-decoration: none;
+        }
+        .button{
+            position: absolute;
+            top: 50px;
+            background: #302a2a;
+            width: 600px;
+            height: 100px;
+            padding: 20px;
+            text-align: center;
+        }
+        .btn1{
+            background: yellow;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-weight: bolder;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+        .btn2{
+            background: #24eeee;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-weight: bolder;
+            margin-top: 30px;
+            cursor: pointer;
+
+        }
+        .container-nombre, .container-nombre1{
+            margin-top: 50px;
+            display: none;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px black;
+        }
+        .container-nombre.active{
+            display: block;
+        }
+        .container-nombre1.active1{
+            display: block;
+        }
+        input#nombre{
+            width: 90%;
+            padding: 5px;
+            margin: 10px auto;
+        }
+        .btn{
+            color: white;
+            background: blue;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            margin: 5px 0;
+        }
+        .btn.btnA{
+            color: white;
+            background: black;
+        }
+        .btn.btnAl{
+            color: white;
+            background: gray;
+        }
+        .message{
+            background: black;
+            color: white;
+            padding: 5px;
+        }
+        .message1{
+            background: blue;
+            color: white;
+            padding: 5px;
+        }
+        .messageAle{
+            color: white;
+            background: gray;
+            padding: 5px;
+        }
+        .messageAlexy{
+            background: rgb(87, 0, 128);
+            color: white;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="retour">
+        <a href="../index.html" class="btn">Retour à l'accueil <i></i></a>
+    </div>
+    <div class="button">
+        <input type="button"  class="btn1" value="Racine carrée et Arrondissement">
+        <input type="button" class="btn2" value="Nombre aléatoire">
+    </div>
+
+    <div class="container-nombre">
+        <h1>Racine carrée et Arrondissement</h1>
+        <input type="number" id="nombre" placeholder="Saisir un nombre">
+        <input type="button" value="Racine carrée" class="btn" onclick="Racine()">
+        <input type="button" value="Arrondir" class="btn btnA" onclick="Arrondir()">
+        <p id="message"></p>
+        <p id="message1"></p>
+    </div>
+
+    <div class="container-nombre1">
+        <h1>Nombre aléatoire</h1>
+        <input type="button" value="Nombre Aléatoire" class="btn btnAl" onclick="Aleatoire()">
+        <p class="message3"></p>
+        <input type="button" value="Nombre Aléatoire entre 10 et 500" class="btn" onclick="AleatoireXY(10,500)">
+        <p class="message4"></p>
+    </div>
+
+    </div>
+    <script>
+        //Racine carrée et Arrondissement
+        let btn1 = document.querySelector(".btn1");
+        let containerNombre = document.querySelector(".container-nombre");
+        
+        btn1.addEventListener("click", afficheRacineArrondir) ;
+        function afficheRacineArrondir(){
+            containerNombre.classList.toggle("active");
+            containerNombre2 .classList.remove("active1");
+        }
+        //Racine carrée
+        function Racine(){
+            let Integer = document.getElementById("nombre").value;
+            let message = document.getElementById("message");
+            let racine = Math.sqrt(Integer);
+            message.innerHTML = "La racine carrée de se nombre est : "+ racine;
+            message.className = "message1";
+            
+            if (Integer === "") {
+                message.innerHTML = "Le champ est vide !";
+                message.style.background = "red";
+                message.style.color = "white";
+            }
+        }
+        //Arrondissement
+        function Arrondir(){
+            let Integer = document.getElementById("nombre").value;
+            let message1 = document.getElementById("message1");
+            let arrondir = Math.round(Integer);
+            
+            message1.innerHTML = "La décimale la plus proche de se nombre est : "+ arrondir;
+            message1.className = "message";
+            if (Integer === "") {
+                message1.innerHTML = "Le champ est vide !";
+                message1.style.background = "red";
+                message1.style.color = "white";
+            }
+        }
+        
+        //Nombre aléatoire et aléatoire X et Y
+        let btn2 = document.querySelector(".btn2");
+        let containerNombre2 = document.querySelector(".container-nombre1");
+
+        btn2.addEventListener("click", afficheAleatoire) ;
+        function afficheAleatoire(){
+            containerNombre2.classList.toggle("active1");
+            containerNombre.classList.remove("active");
+        }
+        //Aléatoire
+        function Aleatoire(){
+            let messageA = document.querySelector(".message3");
+            let aleatoire = Math.floor(Math.random()*100)+1;
+            messageA.innerHTML = "Le nombre aléatoire est : " + aleatoire;
+            messageA.className = "messageAle";
+            alert(aleatoire);
+        }
+        //Aléatoire X et Y
+        
+        function AleatoireXY(x, y){
+            let message4 = document.querySelector(".message4");
+            let aleatoirexy = Math.floor(Math.random() * (y - x +1)+x);
+            message4.innerHTML = "Le nombre aléatoire est : " + aleatoirexy + " et il est compris entre " + x + " et " + y;
+            message4.className = "messageAlexy";
+        }
+    </script>
+</body>
+</html>

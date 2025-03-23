@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau</title>
+    <style>
+        body{
+            background: gainsboro;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .retour{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        .retour a{
+            text-decoration: none;
+        }
+        .container-tableau{
+            text-align: center;
+            background: white;
+            padding: 20px;
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 0 5px black;
+        }
+        table{
+            margin: auto;
+        }
+        .ajouter, .supprimerX, .supprimerY{
+            width: 90%;
+            padding: 5px;
+            margin: 10px auto;
+        }
+        .btn.btnA{
+            background: yellow;
+            color: #000;
+        }
+        .btn.btnS{
+            color: white;
+            background: green;
+        }
+        .btn{
+            color: white;
+            background: blue;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            margin: 5px 0;
+            font-weight: bolder;
+            border-bottom: 5px solid black;
+        }  
+        .btn:active{
+            position: relative;
+            border: none;
+            margin-top: 10px;
+        }
+        .message{
+            background: black;
+            color: white;
+            padding: 20px;
+            font-weight: bolder;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="retour">
+        <a href="../index.html" class="btn">Retour à l'accueil <i></i></a>
+    </div>
+    <div class="container-tableau">
+        <h1>Manipulation de tableau</h1>
+        <table>
+            <thead>
+                <tr>
+                    <td><input type="button" title="Ajouter un élement à la fin du tableau" value="Ajouter un élement à la fin du tableau" class="btn btnA" onclick="ajouter()"></td>
+                    <td><input type="button" title="Supprimer un élément spécifique dans le tableau" value="Supprimer un élément spécifique dans le tableau" class="btn btnS" onclick="supprimer()"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="ajouter" placeholder="Ajouter un élément"></td>
+                    <td><input type="number" class="supprimerX" placeholder="Supprimer un élément">
+                        <input type="number" class="supprimerY" placeholder="Supprimer un élément"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="button" title="Trier les éléments du tableau par ordre croissant" value="Trier les éléments du tableau par ordre croissant" class="btn" onclick="ordonner()"></td>
+                    <td></td>
+                </tr>
+            </thead>
+        </table>
+        <p id="message"></p>
+    </div>
+
+    </div>
+    <script>
+        let tableau = [1,12,35,84,7,8,10,25,3,58];
+        let message = document.getElementById("message");
+        
+        message.innerHTML = "Les données du tableau sont : "+ tableau;
+        message.className = "message";
+        
+        function ajouter(){
+            let item = document.querySelector(".ajouter").value;
+            
+            if (item === "") {
+                message.innerHTML = "Le champ est vide !";
+                message.style.background = "red";
+                message.style.color = "white";
+                message.className ="message";
+
+            }
+            else{
+                let newTableau = tableau.push(item);
+                message.innerHTML = "Les nouveaux données après l'ajout : "+ tableau;
+                message.style.background = "yellow";
+                message.style.color = "black";
+                message.className = "message";
+            }
+        }
+        tableau = newTableau;
+
+        function supprimer(){
+            let itemX = document.querySelector(".supprimerX").value;
+            let itemY = document.querySelector(".supprimerY").value;
+            if (itemX === "" || itemY === "") {
+                message.innerHTML = "Tous les champs sont requis pour une suppression !";
+                message.style.background = "red";
+                message.style.color = "white";
+                message.className = "message";
+            }else{
+                let newTableau = tableau.splice(itemX, itemY);
+                message.innerHTML = "Les nouveaux données après la supression : "+ tableau;
+                message.style.background = "green";
+                message.style.color = "white";
+                message.className = "message";
+            }
+            
+        }
+        function ordonner(){
+            let ordre = tableau.sort((a,b) => a-b);
+            
+            message.innerHTML = "Les nouveaux données après avoir ordonner le tableau: "+ ordre;
+            message.className = "message";
+            message.style.background = "blue";
+            message.style.color = "white";
+            
+        }
+    </script>
+</body>
+</html>

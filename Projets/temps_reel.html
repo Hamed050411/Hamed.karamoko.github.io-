@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horloge</title>
+    <style>
+        body{
+            background: gainsboro;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .retour{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        .retour a{
+            text-decoration: none;
+        }
+        .container-string{
+            text-align: center;
+            background: white;
+            padding: 20px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px black;
+        }
+        input#string{
+            width: 90%;
+            padding: 5px;
+            margin: 10px auto;
+        }
+        .btn{
+            color: white;
+            background: blue;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            margin: 5px 0;
+        }
+        .message{
+            background: black;
+            color: white;
+            padding: 5px;
+        }
+        .message1{
+            background: green;
+            color: white;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body onload="Horloge()">
+    <div class="retour">
+        <a href="../index.html" class="btn">Retour à l'accueil <i></i></a>
+    </div>
+    <div class="container-string" >
+        <h1>Horloge</h1>
+        <input type="text" id="horloge" value="">
+    </div>
+
+    </div>
+    <script>
+        function Horloge() {
+            let date = new Date();
+            let heure = date.getHours();
+            let minutes = date.getMinutes();
+            let seconde = date.getSeconds();
+            
+            if (heure <= 9) {
+                heure = "0" + heure;
+            }
+            if (minutes <= 9) {
+                minutes = "0" + minutes;
+            }
+            if (seconde <= 9) {
+                seconde = "0" + seconde;
+            }
+            let heureActuel = document.querySelector("#horloge").value = heure + ":" + minutes + ":" + seconde;
+           
+            setTimeout(Horloge,1000);
+        }
+    </script>
+</body>
+</html>

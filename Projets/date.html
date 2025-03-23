@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <style>
+        body{
+            background: gainsboro;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .retour{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        .retour a{
+            text-decoration: none;
+        }
+        .container-string{
+            text-align: center;
+            background: white;
+            padding: 20px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px black;
+        }
+        input#date{
+            width: 90%;
+            padding: 5px;
+            margin: 10px auto;
+        }
+        .btn{
+            color: white;
+            background: blue;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            margin: 5px 0;
+        }
+        .message{
+            background: black;
+            color: white;
+            padding: 20px; 
+            border-radius : 10px;
+        }
+        .message1{
+            background: green;
+            color: white;
+            padding: 20px; 
+            border-radius : 10px;
+        }
+        .message2{
+            background: blue;
+            color: white;
+            padding: 20px; 
+            border-radius : 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="retour">
+        <a href="../index.html" class="btn">Retour à l'accueil <i></i></a>
+    </div>
+    <div class="container-string">
+        <form action="">
+            <h1>Manipulation de date</h1>
+            <input type="date" id="date">
+            <input type="button" value="Valider" class="btn" onclick="afficheDate()">
+            <p id="jour"></p>
+            <p id="mois"></p>
+            <p id="annee"></p>
+            <p id="difference"></p>
+        </form>
+    </div>
+
+    </div>
+    <script>
+        function afficheDate(){
+            let dateSaisir = document.getElementById("date").value;
+            let messageJour = document.getElementById("jour");
+            let messageMois = document.getElementById("mois");
+            let messageAnnee = document.getElementById("annee");
+            let message = document.getElementById("difference");
+            let date = new Date(dateSaisir);
+            
+            if (!isNaN(date.getTime())){
+                let jour = date.getDate();
+                let mois = date.getMonth()+1;
+                let annee = date.getFullYear();
+                
+                if (jour <= 9) {
+                    jour = "0" + jour;
+                }
+                else if (mois <= 9) {
+                    mois = "0" + mois;
+                }
+                let maintenant = new Date();
+                let difference = Math.floor((maintenant - date) / (60 * 60 * 24 * 1000));
+                messageJour.innerHTML ="Le jour de la date saisir est : "+ jour;
+                messageJour.className = "message";
+                messageMois.innerHTML ="Le mois de la date saisir est : "+ mois;
+                messageMois.className = "message1";
+                messageAnnee.innerHTML ="L'année de la date saisir est : "+ annee;
+                messageAnnee.className = "message2";
+                message.innerHTML ="La différence entre le jour saisir et le jour actuel est : "+ difference;
+                message.style.background = "gray";
+                message.style.color = "white"; 
+                message.className = "message2";
+            }
+        }
+    </script>
+</body>
+</html>
