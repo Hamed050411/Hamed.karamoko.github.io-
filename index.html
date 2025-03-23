@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="asset/font/bootstrap-icons.css">
+</head>
+<body onload="Accueil()">
+                    <!----------Entete---------->
+    <header>
+        <nav class="container">
+            <div class="nom"><p>Hamed <span>KARAMOKO</span></p></div>
+            <ul class="nav-list" >
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">A propos</a></li>
+                <li><a href="#projets">Projet</a></li>
+                <li><a href="#competences">Compétence</a></li>
+                <li><a href="#contacts">Contact</a></li>
+            </ul>            
+            <button class="menu" popovertarget="my-popover">
+                <i class="bi bi-list"></i>
+            </button>
+            <div id="my-popover" popover>
+                <ul class="nav-list-popover">
+                    <li><a  href="#accueil"><button popovertarget="my-popover" popovertargetaction="hide">Accueil</button></a></li>
+                    <li><a href="#apropos"><button popovertarget="my-popover" popovertargetaction="hide">A propos</button></a></li>
+                    <li><a href="#projets"><button popovertarget="my-popover" popovertargetaction="hide">Projet</button></a></li>
+                    <li><a href="#competences"><button popovertarget="my-popover" popovertargetaction="hide">Compétence</button></a></li>
+                    <li><a href="#contacts"><button popovertarget="my-popover" popovertargetaction="hide">Contact</button></a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+                    <!----------Accueil---------->
+    <section id="accueil">
+        <div class="container accueil">
+            <div class="block">
+                <div class="texte box" id="texte-accueil">
+                    <p>Je suis  <Span>Hamed </Span>, Développeur en devenir passionné par le web et le design !
+                    </p>
+                    <a href="#projets" class="btn btn-secondaire">Voir mes projets <i class="bi bi-trophy"></i></a>
+                </div>
+                <div class="photo box" id="photo-accueil">
+                    <div class="card-img">
+                        <img src="asset/images/accueil.jpg" alt="photo de profile" class="img-responsive">
+                    </div>
+                </div>        
+            </div>
+        </div>    
+    </section>
+                    <!----------A propos---------->
+    <section id="apropos">
+        <div class="container apropos">
+            <h2>A propos <i class="bi bi-person"></i></h2>
+            <div class="block">
+                <div class="texte box">
+                    <p class="presentation-1 presentation">Je m'appel <Span>KARAMOKO</Span>, passionné par la création de sites web moderne et interactifs.
+                    </p>
+                    <p class="presentation-2 presentation">Je suis actuellement étudiant en <span>Développement web</span>, et je cherche à améliorer mes compétences en JavaScript, HTML, CSS.
+                    </p>
+                    <p class="presentation-3 presentation">J'adore transformer mes idées en projet concrets  et expérimenter avec les nouvelles technologies.
+                    </p>
+                    <button class="presentation-btn presentation btn btn-secondaire">Télécharger mon CV <i class="bi bi-download"></i></button>
+                    
+                </div>
+                <div class="photo box">
+                    <div class="card-img">
+                        <img src="asset/images/profile.png" alt="photo de profile" class="img-responsive">
+                    </div>
+                </div>        
+            </div>
+        </div>    
+    </section>
+                    <!----------Projets---------->
+    <section id="projets">
+        <div class="container projets">
+            <div class="bloc">
+                <h2>Mes projets <i class="bi bi-trophy"></i></h2>
+                <div class="block block-projet">
+                    <div class="boxProjet1 box">
+                        <p>Un mini projet pour calculer une racine carrée et arrondir à l'entier le plus proche un nombre quelconque.</p>
+                        <h5>#Html, #Css, #Js</h5>
+                        <div class="a">
+                            <a href="Projets/nombre.html" class="btn btn-secondaire">Voir <i class="bi bi-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="boxProjet2 box">
+                        <p>Un mini projet qui permet de trouver la longueur et d'extraire les trois (3) prémières letrre d'une chaine de caractère après l'avoir saisir.</p>
+                        <h5>#Html, #Css, #Js</h5>
+                        <div class="a">
+                            <a href="Projets/chaineDeCaractere.html" class="btn btn-secondaire">Voir <i class="bi bi-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="boxProjet3 box">
+                        <p>Un mini projet qui permet d'ajouter ou suprimer un élément au tableau.</p>
+                        <h5>#Html, #Css, #Js</h5>
+                        <div class="a">
+                            <a href="Projets/tableau.html" class="btn btn-secondaire">Voir <i class="bi bi-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="block block-projet">
+                    <div class="boxProjet4 box">
+                        <p>Un mini projet pour calculer un le montant à payer par mois après avoir saisir le pret, l'interet et la durée du pret.</p>
+                        <h5>#Html, #Css, #Js</h5>
+                        <div class="a">
+                            <a href="Projets/calculateur.html" class="btn btn-secondaire">Voir <i class="bi bi-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="boxProjet5 box">
+                        <p>Un mini projet qui permet de trouver la différence des jours et afficher le jour, le mois et l'année.</p>
+                        <h5>#Html, #Css, #Js</h5>
+                        <div class="a">
+                            <a href="Projets/date.html" class="btn btn-secondaire">Voir <i class="bi bi-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="boxProjet6 box">
+                        <p>Un mini projet qui affiche le temps réel.</p>
+                        <h5>#Html, #Css, #Js</h5>
+                        <div class="a">
+                            <a href="Projets/temps_reel.html" class="btn btn-secondaire">Voir <i class="bi bi-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                    <!----------Compétences---------->
+    <section id="competences">
+        <div class="container competences">
+            <div class="bloc">
+                <h2>Mes compétences <i class="bi bi-mortarboard"></i></h2>
+                <div class="block">
+                    <div class="box">
+                        <h3>Soft Skills</h3>
+                        <div class="tableau">
+                            <table>
+                                <tr class="tr-progression">
+                                    <td><p>Gestion de projet</p><div class="progression"><div class="niveau-gp"></div></div></td>
+                                    <td class="pourcentage"><strong>85%</strong></td>
+                                </tr>
+                                <tr class="tr-progression">
+                                    <td><p>Resolution de problème</p><div class="progression"><div class="niveau-rp"></div></div></td>
+                                    <td class="pourcentage"><strong>75%</strong></td>
+                                </tr>
+                                <tr class="tr-progression">
+                                    <td><p>Adaptabilité</p><div class="progression"><div class="niveau-a"></div></div></td>
+                                    <td class="pourcentage"><strong>90%</strong></td>
+                                </tr>
+                            </table> 
+                        </div>
+                    </div>
+                    <div class="box">
+                        <h3>Hard Skills</h3>
+                        <div class="tableau">
+                            <table>
+                                <tr class="tr-progression">
+                                    <td><p>HTML</p><div class="progression"><div class="niveau-html"></div></div></td>
+                                    <td class="pourcentage"><strong>95%</strong></td>
+                                </tr>
+                                <tr class="tr-progression">
+                                    <td><p>CSS</p><div class="progression"><div class="niveau-css"></div></div></td>
+                                    <td class="pourcentage"><strong>75%</strong></td>
+                                </tr>
+                                <tr class="tr-progression">
+                                    <td><p>JavaScript</p><div class="progression"><div class="niveau-js"></div></div></td>
+                                    <td class="pourcentage"><strong>60%</strong></td>
+                                </tr>
+                                <tr class="tr-progression">
+                                    <td><p>VS Code</p><div class="progression"><div class="niveau-vs"></div></div></td>
+                                    <td class="pourcentage"><strong>95%</strong></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+                    <!----------Contact---------->
+    <section id="contacts">
+        <div class="texte">
+            <h1>Vous avez un <span>projet en tête ?</span></h1>
+            <h2>N'hésitez pas me <span>contacter.</span></h2>
+
+        </div>
+        <div class="container contacts">
+            <div class="block">
+                <form action="">
+                    <div class="block-1 bloc">
+                        <div class="box box-1">
+                            <label for="prenom">Votre prénom</label>
+                            <br>
+                            <input type="text" id="prenom">
+                        </div>
+                        <div class="box box-2">
+                            <label for="nom">Votre nom</label>
+                            <br>
+                            <input type="text" id="nom">
+                        </div>
+                    </div>
+                    <div class="block-2 bloc">
+                        <label for="sujet">Votre sujet</label>
+                        <br>
+                        <input type="text" id="sujet">
+                    </div>
+                    <div class="block-3 bloc">
+                        <textarea id="message" rows="20"></textarea>
+                    </div>
+                    <div class="block-4 bloc">
+                        <button type="submit" class="btn btn-primaire">Envoyer <i class="bi bi-send"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+                    <!----------Pied de page---------->
+    <footer>
+        <div class="footer">
+            <strong>Conçu par <span>Hamed KARAMOKO</span> avec HTML, CSS, JavaScript</strong>
+            <strong>Tous droits réservés - 2025</strong> 
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
