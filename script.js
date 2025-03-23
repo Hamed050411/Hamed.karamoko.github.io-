@@ -30,6 +30,6 @@ window.addEventListener("scroll", function (){
 
         if(position_liste < hauterFenetre_liste && position_liste > 0 ){
             projet.style.transform = "translateY(0px)";
-        }
+            projets_block.sTyler.transform = "translateY(0px)";     }
     })
 })
