@@ -29,6 +29,6 @@ window.addEventListener("scroll", function (){
 
         if(position_liste < hauterFenetre_liste && position_liste > 0 ){
             projet_block.style.transform = "translateY(0px)";
-            }
+        }
     })
 })
