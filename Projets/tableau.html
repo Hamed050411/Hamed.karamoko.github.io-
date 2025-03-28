@@ -8,18 +8,9 @@
         body{
             background: gainsboro;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             height: 100vh;
-        }
-        .retour{
-            position: absolute;
-            top: 50px;
-            left: 50px;
-        }
-        .retour a{
-            text-decoration: none;
         }
         .container-tableau{
             text-align: center;
@@ -29,11 +20,13 @@
             border-radius: 10px;
             box-shadow: 0 0 5px black;
         }
-        table{
-            margin: auto;
+        .box{
+            width: 100%;
+            margin: 0 auto;
         }
+        
         .ajouter, .supprimerX, .supprimerY{
-            width: 90%;
+            width: 70%;
             padding: 5px;
             margin: 10px auto;
         }
@@ -70,28 +63,23 @@
     </style>
 </head>
 <body>
-    <div class="retour">
-        <a href="../index.html" class="btn">Retour à l'accueil <i></i></a>
-    </div>
     <div class="container-tableau">
         <h1>Manipulation de tableau</h1>
-        <table>
-            <thead>
-                <tr>
-                    <td><input type="button" title="Ajouter un élement à la fin du tableau" value="Ajouter un élement à la fin du tableau" class="btn btnA" onclick="ajouter()"></td>
-                    <td><input type="button" title="Supprimer un élément spécifique dans le tableau" value="Supprimer un élément spécifique dans le tableau" class="btn btnS" onclick="supprimer()"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" class="ajouter" placeholder="Ajouter un élément"></td>
-                    <td><input type="number" class="supprimerX" placeholder="Supprimer un élément">
-                        <input type="number" class="supprimerY" placeholder="Supprimer un élément"></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="button" title="Trier les éléments du tableau par ordre croissant" value="Trier les éléments du tableau par ordre croissant" class="btn" onclick="ordonner()"></td>
-                    <td></td>
-                </tr>
-            </thead>
-        </table>
+        <div class="tableau">
+            <div class="box">
+                <button type="button" title="Ajouter un élement à la fin du tableau" class="btn btnA" onclick="ajouter()">Ajouter un élement à la fin du tableau</button>
+                <input type="text" class="ajouter" placeholder="Ajouter un élément">
+            </div>
+            <div class="box">
+                <button type="button" title="Supprimer un élément spécifique dans le tableau" class="btn btnS" onclick="supprimer()">Supprimer un élément spécifique dans le tableau</button>
+                <input type="number" class="supprimerX" placeholder="Supprimer un élément">
+                <input type="number" class="supprimerY" placeholder="Supprimer un élément">
+            </div>
+            <div class="box">
+                <button type="button" title="Trier les éléments du tableau par ordre croissant" class="btn" onclick="ordonner()">Trier les éléments du tableau par ordre croissant</button>
+            </div>
+        </div>
+        
         <p id="message"></p>
     </div>
 
