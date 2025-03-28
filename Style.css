@@ -228,6 +228,7 @@ nav .nom{
     align-items: center;
     justify-content: space-around;
     padding: 50px 0;
+    overflow: hidden;
 }
 .projets .box{
     width: 350px;
